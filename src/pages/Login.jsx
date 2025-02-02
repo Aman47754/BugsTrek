@@ -4,11 +4,9 @@ import logo from '../assets/images/logo.png';
 import { login, signup } from '../Firebase';
 import { useNavigate } from 'react-router-dom';
 
-import { userContext } from '../Contexts/userContextProvider';
 
 const Login = () => {
   const navigate = useNavigate();
-  const{setUser,setUsermail}=useContext(userContext);
 
   const [loginState, setLoginState] = useState('Sign-In');
   const [name, setName] = useState('');

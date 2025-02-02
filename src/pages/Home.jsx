@@ -11,7 +11,6 @@ import codeforcesIcon from "../assets/images/code-forces.svg";
 import { doc, getDoc } from "firebase/firestore";
 import { db, auth } from "../Firebase"; // Ensure you import auth properly
 import { ApiContext } from "../Data/ApiProvider";
-import { userContext } from "../Contexts/userContextProvider";
 import { useNavigate } from "react-router-dom";
 
 import Footer from "../components/Footer/Footer";
