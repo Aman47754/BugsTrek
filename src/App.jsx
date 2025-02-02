@@ -7,7 +7,7 @@ import Navbar from './components/NavBar/Navbar';
 import Home from './pages/Home';
 import ContestGraph from './components/ContestGraph/ContestGraph';
 import ApiProvider from './Data/ApiProvider';
-import UserContextProvider from './Contexts/userContextProvider';
+
 
 
 import Login from './pages/Login';
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <ApiProvider>
-      <UserContextProvider>
+      
     
       
         <AuthHandler />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-        </UserContextProvider>
+        
     </ApiProvider>
   );
 }
