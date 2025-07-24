@@ -71,6 +71,7 @@ bugsTrek is a comprehensive competitive programming dashboard that consolidates 
 ![Login](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/Login.png)
 ![Register](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/Register.png)
 ![Profile](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/profile%20handles.png)
+![Hero](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/hero.png)
 ![heatmap](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/heatmap.png)
 ![piechart](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/piechart.png)
 ![graph](https://github.com/Aman47754/BugsTrek/blob/main/src/assets/Readables/graph.png)
