@@ -7,7 +7,7 @@ import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { logout } from '../../Firebase';
 import {  useNavigate } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
-import { db, auth } from "../../Firebase"; // Ensure you import auth properly
+import { db, auth } from "../../Firebase";
 
 
 

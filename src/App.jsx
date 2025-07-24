@@ -5,7 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './Firebase'; // Ensure this path is correct
 import Navbar from './components/NavBar/Navbar';
 import Home from './pages/Home';
-import ContestGraph from './components/ContestGraph/ContestGraph';
+import ContestGraph from './components/ContestGraph/ContestGraph'; 
 import ApiProvider from './Data/ApiProvider';
 
 

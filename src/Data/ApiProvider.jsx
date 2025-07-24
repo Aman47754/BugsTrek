@@ -44,12 +44,19 @@ const ApiProvider = ({ children }) => {
   const handleApiError = (error, platform) => {
     if (error.message.includes("429")) {
       // Too many requests (rate limiting)
-      console.warn(`Too many requests for ${platform}. Skipping...`);
+      alert(`Too many requests for ${platform}. Skipping...`);
     } else {
       // Invalid user ID or other errors
-      console.error(`Error fetching ${platform} data:`, error.message);
-      navigate('/profile');
-      alert(`Invalid ${platform} handle. Please update it in your profile.`);
+      
+      if(platform ==="LeetCode" && error.message==="That user does not exist."){
+        navigate('/profile');
+        alert(`Invalid ${platform} handle. Please update it in your profile.`);
+      }
+      else{
+       alert(`Error fetching ${platform} data:`, error.message);
+      }
+        
+      
     }
   };
 
@@ -79,6 +86,12 @@ const ApiProvider = ({ children }) => {
           );
           if (!response.ok) throw new Error(response.statusText);
           const result = await response.json();
+
+           // Check if the result contains "errors" key
+          if (result.errors && result.errors.length > 0) {
+            throw new Error(result.errors[0].message || "Unknown LeetCode error");
+          }
+
           setData((prevData) => ({ ...prevData, leetcode: result }));
         } catch (error) {
           handleApiError(error, "LeetCode");
@@ -92,9 +105,14 @@ const ApiProvider = ({ children }) => {
           );
           if (!response.ok) throw new Error(response.statusText);
           const result = await response.json();
+           // Check if the result contains "errors" key
+          if (result.errors && result.errors.length > 0) {
+            throw new Error(result.errors[0].message || "Unknown LeetCode error");
+          }
+          console.log(result);
           setData((prevData) => ({ ...prevData, leetcodeContestData: result }));
         } catch (error) {
-          handleApiError(error, "LeetCode Contest");
+          handleApiError(error, "LeetCode");
         }
       };
 

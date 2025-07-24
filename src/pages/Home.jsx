@@ -86,9 +86,7 @@ function Home() {
       });
       setLeetcodeMaxRating(maxRating);
     }
-    else{
-      navigate('/profile')
-    }
+    
   }, [codechef, leetcode, codeforcesUser]);
 
   const heatmapRef = useRef(null);
@@ -125,12 +123,18 @@ function Home() {
       </div>
 
       {/* Hero Cards Section */}
-      <div className="mt-[50px] max-w-[86vw] mx-auto flex flex-wrap justify-between gap-[20px] sm:flex-row">
+      
+        <div className="mt-[50px] max-w-[86vw] mx-auto flex flex-wrap sm:justify-between  gap-[20px] sm:flex-row  justify-center">
         <HeroCards category="Total Questions" />
         <HeroCards category="Active Days" />
         <HeroCards category="Total Contests" />
         <HeroCards category="Total Inactive Days This Year" inactive={inactiveDays} />
+      
+      
       </div>
+        
+
+      
 
       {/* Submission Tracker Section */}
       <div className="max-w-[86%] mx-auto px-[15px] bg-white mt-[40px] rounded-[12px] border border-gray-300 shadow-lg">
@@ -169,6 +173,15 @@ function Home() {
           {selectedPlatform} Contest Graph
         </div>
         <div className="flex justify-center gap-[20px] mb-[30px] flex-wrap">
+
+          <div
+            className={`platform-button bg-gray-100 hover:bg-blue-100 text-black font-bold px-6 py-3 rounded-lg text-center cursor-pointer flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[102%] shadow-md ${selectedPlatform === "Codeforces" ? "bg-[#74b2ff]" : ""}`}
+            onClick={() => handlePlatformChange("Codeforces")}
+          >
+            <img src={codeforcesIcon} className="w-[24px]" alt="Codeforces Icon" />
+            <span className="text-[16px]">Codeforces</span>
+          </div>
+          
           <div
             className={`platform-button bg-gray-100 hover:bg-orange-100 text-black font-bold px-6 py-3 rounded-lg text-center cursor-pointer flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[102%] shadow-md ${selectedPlatform === "Leetcode" ? "bg-orange-200" : ""}`}
             onClick={() => handlePlatformChange("Leetcode")}
@@ -183,13 +196,7 @@ function Home() {
             <img src={codechefIcon} className="w-[24px]" alt="Codechef Icon" />
             <span className="text-[16px]">Codechef</span>
           </div>
-          <div
-            className={`platform-button bg-gray-100 hover:bg-blue-100 text-black font-bold px-6 py-3 rounded-lg text-center cursor-pointer flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[102%] shadow-md ${selectedPlatform === "Codeforces" ? "bg-blue-300" : ""}`}
-            onClick={() => handlePlatformChange("Codeforces")}
-          >
-            <img src={codeforcesIcon} className="w-[24px]" alt="Codeforces Icon" />
-            <span className="text-[16px]">Codeforces</span>
-          </div>
+          
         </div>
         <div className="w-full h-[300px]">
           <ContestGraph platform={selectedPlatform} />
