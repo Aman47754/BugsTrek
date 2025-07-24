@@ -181,7 +181,7 @@ function Home() {
             <img src={codeforcesIcon} className="w-[24px]" alt="Codeforces Icon" />
             <span className="text-[16px]">Codeforces</span>
           </div>
-          
+
           <div
             className={`platform-button bg-gray-100 hover:bg-orange-100 text-black font-bold px-6 py-3 rounded-lg text-center cursor-pointer flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[102%] shadow-md ${selectedPlatform === "Leetcode" ? "bg-orange-200" : ""}`}
             onClick={() => handlePlatformChange("Leetcode")}
